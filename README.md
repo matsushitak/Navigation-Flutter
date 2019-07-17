@@ -23,8 +23,10 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Push & Pop
 
-[trickring/Navigation\-Flutter at navigation\_push](https://github.com/trickring/Navigation-Flutter/tree/navigation_push)
+- [Navigate to a new screen and back \- Flutter](https://flutter.dev/docs/cookbook/navigation/navigation-basics)
+- [trickring/Navigation\-Flutter at navigation\_push](https://github.com/trickring/Navigation-Flutter/tree/navigation_push)
 
 ### Push & Pop (Routing)
 
-[trickring/Navigation\-Flutter at navigation\_pushNamed](https://github.com/trickring/Navigation-Flutter/tree/navigation_pushNamed)
+- [Navigate with named routes \- Flutter](https://flutter.dev/docs/cookbook/navigation/named-routes)
+- [trickring/Navigation\-Flutter at navigation\_pushNamed](https://github.com/trickring/Navigation-Flutter/tree/navigation_pushNamed)

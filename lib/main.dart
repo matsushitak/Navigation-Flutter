@@ -36,13 +36,19 @@ class _HomePageState extends State<HomePage> {
             RaisedButton(
               child: Text("First Page"),
               onPressed: () {
-                // TODO:Navigate to First Page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => _FirstPage()),
+                );
               },
             ),
             RaisedButton(
               child: Text("Second Page"),
               onPressed: () {
-                // TODO:Navigate to Second Page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => _SecondPage()),
+                );
               },
             )
           ],

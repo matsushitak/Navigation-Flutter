@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:navigation/arguments.dart';
 
 void main() => runApp(App());
 
@@ -18,7 +19,6 @@ class App extends StatelessWidget {
         _FirstPage.routeName: (context) => _FirstPage(),
         _SecondPage.routeName: (context) => _SecondPage(),
       },
-      home: HomePage(),
     );
   }
 }
@@ -47,16 +47,22 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => _FirstPage()),
+                  MaterialPageRoute(
+                    builder: (context) => _FirstPage(),
+                    settings: RouteSettings(
+                      arguments: Arguments("First Page", "This is First Page."),
+                    ),
+                  ),
                 );
               },
             ),
             RaisedButton(
               child: Text("Second Page"),
               onPressed: () {
-                Navigator.push(
+                Navigator.pushNamed(
                   context,
-                  MaterialPageRoute(builder: (context) => _SecondPage()),
+                  _SecondPage.routeName,
+                  arguments: Arguments("Second Page", "This is Second Page."),
                 );
               },
             )
@@ -72,16 +78,17 @@ class _FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Arguments args = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text("First Page"),
+        title: Text(args.title),
       ),
       body: Container(
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("This is First Page"),
+            Text(args.message),
             RaisedButton(
                 child: Text("Back"),
                 onPressed: () {
@@ -99,16 +106,17 @@ class _SecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Arguments args = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Page"),
+        title: Text(args.title),
       ),
       body: Container(
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("This is Second Page"),
+            Text(args.message),
             RaisedButton(
                 child: Text("Back"),
                 onPressed: () {

@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         alignment: Alignment.center,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
               child: Text("First Page"),
@@ -67,8 +68,7 @@ class _FirstPage extends StatelessWidget {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: Center(
-            child: Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text("This is First Page"),
@@ -78,7 +78,7 @@ class _FirstPage extends StatelessWidget {
                   Navigator.pop(context);
                 }),
           ],
-        )),
+        ),
       ),
     );
   }
@@ -93,8 +93,7 @@ class _SecondPage extends StatelessWidget {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: Center(
-            child: Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text("This is Second Page"),
@@ -104,7 +103,7 @@ class _SecondPage extends StatelessWidget {
                   Navigator.pop(context);
                 }),
           ],
-        )),
+        ),
       ),
     );
   }

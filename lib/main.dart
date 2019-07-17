@@ -12,17 +12,19 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: HomePage.routeName,
       routes: {
-        '/': (context) => HomePage(),
-        '/first': (context) => _FirstPage(),
-        '/second': (context) => _SecondPage()
+        HomePage.routeName: (context) => HomePage(),
+        _FirstPage.routeName: (context) => _FirstPage(),
+        _SecondPage.routeName: (context) => _SecondPage()
       },
     );
   }
 }
 
 class HomePage extends StatefulWidget {
+  static const routeName = "/";
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -42,13 +44,13 @@ class _HomePageState extends State<HomePage> {
             RaisedButton(
               child: Text("First Page"),
               onPressed: () {
-                Navigator.pushNamed(context, '/first');
+                Navigator.pushNamed(context, _FirstPage.routeName);
               },
             ),
             RaisedButton(
               child: Text("Second Page"),
               onPressed: () {
-                Navigator.pushNamed(context, '/second');
+                Navigator.pushNamed(context, _SecondPage.routeName);
               },
             )
           ],
@@ -59,6 +61,8 @@ class _HomePageState extends State<HomePage> {
 }
 
 class _FirstPage extends StatelessWidget {
+  static const routeName = "/first";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,6 +88,8 @@ class _FirstPage extends StatelessWidget {
 }
 
 class _SecondPage extends StatelessWidget {
+  static const routeName = "/secound";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

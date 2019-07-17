@@ -30,3 +30,13 @@ samples, guidance on mobile development, and a full API reference.
 
 - [Navigate with named routes \- Flutter](https://flutter.dev/docs/cookbook/navigation/named-routes)
 - [trickring/Navigation\-Flutter at navigation\_pushNamed](https://github.com/trickring/Navigation-Flutter/tree/navigation_pushNamed)
+
+### Push With Arguments
+
+- [Pass arguments to a named route \- Flutter](https://flutter.dev/docs/cookbook/navigation/navigate-with-arguments)
+- [trickring/Navigation\-Flutter at navigation\_pushWithArguments](https://github.com/trickring/Navigation-Flutter/tree/navigation_pushWithArguments)
+
+### Pop Resurn Data
+
+- [Return data from a screen \- Flutter](https://flutter.dev/docs/cookbook/navigation/returning-data)
+- [trickring/Navigation\-Flutter at navigation\_popResurnArguments](https://github.com/trickring/Navigation-Flutter/tree/navigation_popResurnArguments)

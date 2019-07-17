@@ -30,6 +30,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var message = "This is Home Page.";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,22 +43,41 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(message),
             RaisedButton(
               child: Text("First Page"),
               onPressed: () {
-                Navigator.pushNamed(context, _FirstPage.routeName);
+                _pushFirstPage();
               },
             ),
             RaisedButton(
               child: Text("Second Page"),
               onPressed: () {
-                Navigator.pushNamed(context, _SecondPage.routeName);
+                _pushSecondPage();
               },
             )
           ],
         ),
       ),
     );
+  }
+
+  _pushFirstPage() async {
+    var result = await Navigator.pushNamed(context, _FirstPage.routeName);
+    if (result is String) {
+      setState(() {
+        message = result;
+      });
+    }
+  }
+
+  _pushSecondPage() async {
+    var result = await Navigator.pushNamed(context, _SecondPage.routeName);
+    if (result is String) {
+      setState(() {
+        message = result;
+      });
+    }
   }
 }
 
@@ -78,7 +99,7 @@ class _FirstPage extends StatelessWidget {
             RaisedButton(
                 child: Text("Back"),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pop(context, "First Page is backed.");
                 }),
           ],
         ),
@@ -105,7 +126,7 @@ class _SecondPage extends StatelessWidget {
             RaisedButton(
                 child: Text("Back"),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pop(context, "Second Page is backed.");
                 }),
           ],
         ),

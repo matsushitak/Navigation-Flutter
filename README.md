@@ -20,11 +20,3 @@ samples, guidance on mobile development, and a full API reference.
 [Navigation & routing \- Flutter](https://flutter.dev/docs/development/ui/navigation)
 
 <img src="https://user-images.githubusercontent.com/18419093/61352441-507f4180-a8a8-11e9-8231-17021f391909.gif" width=400>
-
-### Push & Pop
-
-[trickring/Navigation\-Flutter at navigation\_push](https://github.com/trickring/Navigation-Flutter/tree/navigation_push)
-
-### Push & Pop (Routing)
-
-[trickring/Navigation\-Flutter at navigation\_pushNamed](https://github.com/trickring/Navigation-Flutter/tree/navigation_pushNamed)

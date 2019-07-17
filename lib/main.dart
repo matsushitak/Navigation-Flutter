@@ -67,7 +67,18 @@ class _FirstPage extends StatelessWidget {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: Text("This is First Page"),
+        child: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("This is First Page"),
+            RaisedButton(
+                child: Text("Back"),
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
+          ],
+        )),
       ),
     );
   }
@@ -82,7 +93,18 @@ class _SecondPage extends StatelessWidget {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: Text("This is Second Page"),
+        child: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("This is Second Page"),
+            RaisedButton(
+                child: Text("Back"),
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
+          ],
+        )),
       ),
     );
   }

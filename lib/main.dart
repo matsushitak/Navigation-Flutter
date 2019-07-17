@@ -12,7 +12,12 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/first': (context) => _FirstPage(),
+        '/second': (context) => _SecondPage()
+      },
     );
   }
 }
@@ -37,19 +42,13 @@ class _HomePageState extends State<HomePage> {
             RaisedButton(
               child: Text("First Page"),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => _FirstPage()),
-                );
+                Navigator.pushNamed(context, '/first');
               },
             ),
             RaisedButton(
               child: Text("Second Page"),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => _SecondPage()),
-                );
+                Navigator.pushNamed(context, '/second');
               },
             )
           ],

@@ -12,12 +12,20 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialRoute: "/",
+      routes: {
+        HomePage.routeName: (context) => HomePage(),
+        _FirstPage.routeName: (context) => _FirstPage(),
+        _SecondPage.routeName: (context) => _SecondPage(),
+      },
       home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
+  static const routeName = "/";
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -60,6 +68,8 @@ class _HomePageState extends State<HomePage> {
 }
 
 class _FirstPage extends StatelessWidget {
+  static const routeName = "/first";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +95,8 @@ class _FirstPage extends StatelessWidget {
 }
 
 class _SecondPage extends StatelessWidget {
+  static const routeName = "/second";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

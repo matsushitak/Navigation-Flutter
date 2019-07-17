@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() => runApp(App());
 
@@ -25,8 +26,58 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-      title: Text(""),
-    ));
+      appBar: AppBar(
+        title: Text("Home"),
+      ),
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text("First Page"),
+              onPressed: () {
+                // TODO:Navigate to First Page
+              },
+            ),
+            RaisedButton(
+              child: Text("Second Page"),
+              onPressed: () {
+                // TODO:Navigate to Second Page
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _FirstPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("First Page"),
+      ),
+      body: Container(
+        alignment: Alignment.center,
+        child: Text("This is First Page"),
+      ),
+    );
+  }
+}
+
+class _SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Page"),
+      ),
+      body: Container(
+        alignment: Alignment.center,
+        child: Text("This is Second Page"),
+      ),
+    );
   }
 }
